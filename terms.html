@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Salmo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:        #1C1A17;
+      --ink-soft:   #6B6560;
+      --ink-ghost:  #B8B2AB;
+      --parchment:  #F7F4EF;
+      --warm-grey:  #EDE8DF;
+      --ember:      #C2622A;
+      --ember-soft: #E8956A;
+      --ember-pale: #F5DDD0;
+      --sand:       #D4C5A9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--ink);
+      color: var(--parchment);
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,149,106,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,149,106,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 72px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--ember);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--parchment);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-link {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--ink-ghost);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--ember-soft); }
+
+    .hero {
+      margin-bottom: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(212,197,169,0.15);
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.3);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      line-height: 1.1;
+      color: var(--parchment);
+      margin-bottom: 20px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--ember-soft);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--ink-ghost);
+      letter-spacing: 0.05em;
+    }
+
+    .section {
+      margin-bottom: 52px;
+    }
+
+    .section-number {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--ember);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--parchment);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .section p {
+      color: rgba(247,244,239,0.65);
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .rule-list {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .rule-list li {
+      padding: 12px 16px;
+      background: rgba(247,244,239,0.03);
+      border-left: 2px solid var(--ember);
+      color: rgba(247,244,239,0.65);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .rule-list li strong {
+      color: var(--parchment);
+    }
+
+    .highlight-block {
+      padding: 24px;
+      background: rgba(194,98,42,0.08);
+      border: 1px solid rgba(194,98,42,0.2);
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .highlight-block p {
+      font-size: 14px;
+      color: rgba(247,244,239,0.7);
+      margin: 0;
+    }
+
+    .contact-block {
+      margin-top: 64px;
+      padding: 32px;
+      background: rgba(247,244,239,0.04);
+      border: 1px solid rgba(212,197,169,0.12);
+      border-radius: 16px;
+    }
+
+    .contact-block .eyebrow { margin-bottom: 12px; }
+
+    .contact-block p {
+      color: rgba(247,244,239,0.55);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .contact-link {
+      color: var(--ember-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .contact-link:hover { text-decoration: underline; }
+
+    .site-footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(212,197,169,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--ink-ghost);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-ghost);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--ember-soft); }
+
+    @media (max-width: 600px) {
+      .wrapper { padding: 48px 24px 80px; }
+      .site-footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="site-header">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+        </svg>
+      </div>
+      <span class="logo-name">salmo</span>
+      <a href="privacy.html" class="nav-link">Privacy Policy →</a>
+    </header>
+
+    <div class="hero">
+      <p class="eyebrow">Legal</p>
+      <h1 class="hero-title">Terms of<br><em>Service</em></h1>
+      <p class="hero-meta">Last updated: May 2026 &nbsp;·&nbsp; Effective: May 2026</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">Introduction</p>
+      <h2 class="section-title">Using Salmo means agreeing to these terms.</h2>
+      <p>These Terms of Service ("Terms") govern your use of the Salmo mobile application ("the App"), operated by the Salmo developer ("we", "us", or "our"). Please read them carefully.</p>
+      <p>By downloading, installing, or using Salmo, you confirm that you are at least 13 years of age and agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">01 — What Salmo is</p>
+      <h2 class="section-title">A daily quest app for real-world exploration.</h2>
+      <p>Salmo is a mobile application that presents users with curated daily quests — small, real-world activities designed to encourage exploration, creativity, and presence. The App includes a map view showing location-based quests, a personal log feature, and progress tracking.</p>
+      <p>Quests shown in the App are curated by us. The App is provided as-is and we reserve the right to change, add, or remove quests and features at any time without notice.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">02 — Your account</p>
+      <h2 class="section-title">You are responsible for your account.</h2>
+      <p>To use Salmo you must create an account using a valid email address or Sign in with Apple. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</p>
+      <p>You agree to provide accurate information when creating your profile. You may not impersonate another person or use a name that is offensive or that violates any third-party rights.</p>
+      <p>You may delete your account at any time via Settings → Delete my account. Upon deletion, all your personal data is permanently removed from our servers.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">03 — Acceptable use</p>
+      <h2 class="section-title">Use Salmo responsibly.</h2>
+      <p>You agree to use Salmo only for lawful purposes and in a way that does not infringe the rights of others. The following are strictly prohibited:</p>
+
+      <ul class="rule-list">
+        <li><strong>No harmful content</strong> — do not use the App to share, create, or promote content that is offensive, abusive, defamatory, obscene, or otherwise objectionable.</li>
+        <li><strong>No illegal activity</strong> — do not use the App to facilitate any illegal activity, including but not limited to fraud, harassment, or violation of privacy.</li>
+        <li><strong>No interference</strong> — do not attempt to hack, reverse-engineer, or disrupt the App or its underlying infrastructure.</li>
+        <li><strong>No impersonation</strong> — do not impersonate any person or entity or misrepresent your affiliation with any person or entity.</li>
+        <li><strong>No automated access</strong> — do not use bots, scrapers, or automated scripts to access the App or its data.</li>
+        <li><strong>No unsafe quests</strong> — do not physically harm yourself or others while attempting quests. All quests are suggestions — use common sense and stay safe.</li>
+      </ul>
+
+      <p>We reserve the right to suspend or terminate your account immediately if we determine, at our sole discretion, that you have violated these rules.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">04 — Personal logs</p>
+      <h2 class="section-title">Your logs belong to you.</h2>
+      <p>Salmo allows you to create personal activity logs. These logs are private to your account and are not visible to other users. You retain full ownership of the content you log.</p>
+      <p>By creating logs, you grant us a limited, non-exclusive licence to store and process that content solely for the purpose of providing the App's functionality to you. We do not use the content of your logs for any other purpose, including advertising or training AI models.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">05 — Quests and location</p>
+      <h2 class="section-title">Quests are suggestions, not instructions.</h2>
+      <p>All quests presented in Salmo are suggestions for real-world activities. You are solely responsible for your own safety when choosing to attempt a quest. We are not liable for any injury, damage, or loss that results from attempting a quest.</p>
+      <p>Location data is used in-session to show you nearby quests. See our Privacy Policy for full details on how location data is handled.</p>
+
+      <div class="highlight-block">
+        <p>Always use common sense. If a quest requires you to visit a location, ensure it is legal and safe to do so. Never trespass, break local laws, or put yourself or others at risk.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-number">06 — Intellectual property</p>
+      <h2 class="section-title">The App and its content are ours.</h2>
+      <p>Salmo, its design, code, quest content, and all associated intellectual property are owned by us or our licensors. You may not copy, reproduce, distribute, or create derivative works based on the App or its content without our express written permission.</p>
+      <p>The Salmo name, logo, and brand elements may not be used without our prior written consent.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">07 — Disclaimers</p>
+      <h2 class="section-title">The App is provided "as is".</h2>
+      <p>Salmo is provided without warranty of any kind, express or implied. We do not guarantee that the App will be available at all times, free from errors, or that quests will be available in your area.</p>
+      <p>To the fullest extent permitted by applicable law, we disclaim all liability for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">08 — Governing law</p>
+      <h2 class="section-title">These Terms are governed by Dutch law.</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the Netherlands, without regard to its conflict of law provisions.</p>
+      <p>Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of the Netherlands.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-number">09 — Changes to these Terms</p>
+      <h2 class="section-title">We may update these Terms.</h2>
+      <p>We reserve the right to update these Terms at any time. We will notify you of significant changes via a notice in the App or by updating the "Last updated" date above. Continued use of the App after any changes constitutes your acceptance of the new Terms.</p>
+    </div>
+
+    <div class="contact-block">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title" style="font-size:20px; margin-bottom:12px;">Questions about these Terms?</h2>
+      <p>If you have any questions about these Terms of Service, contact us at:</p>
+      <a href="mailto:support@salmo.app" class="contact-link">support@salmo.app</a>
+    </div>
+
+    <footer class="site-footer">
+      <span class="footer-brand">salmo</span>
+      <nav class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </footer>
+
+  </div>
+</body>
+</html>
