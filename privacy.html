@@ -34,7 +34,6 @@
       min-height: 100vh;
     }
 
-    /* Grain overlay */
     body::before {
       content: '';
       position: fixed;
@@ -45,7 +44,6 @@
       z-index: 0;
     }
 
-    /* Grid lines */
     body::after {
       content: '';
       position: fixed;
@@ -66,7 +64,6 @@
       padding: 80px 32px 120px;
     }
 
-    /* Header */
     .site-header {
       display: flex;
       align-items: center;
@@ -111,7 +108,6 @@
 
     .nav-link:hover { color: var(--ember-soft); }
 
-    /* Hero */
     .hero {
       margin-bottom: 64px;
       padding-bottom: 48px;
@@ -146,7 +142,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* Sections */
     .section {
       margin-bottom: 52px;
     }
@@ -175,7 +170,6 @@
 
     .section p:last-child { margin-bottom: 0; }
 
-    /* Data list */
     .data-list {
       list-style: none;
       margin: 16px 0;
@@ -213,7 +207,6 @@
       line-height: 1.6;
     }
 
-    /* Contact block */
     .contact-block {
       margin-top: 64px;
       padding: 32px;
@@ -239,7 +232,6 @@
 
     .contact-link:hover { text-decoration: underline; }
 
-    /* Footer */
     .site-footer {
       margin-top: 80px;
       padding-top: 32px;
@@ -336,6 +328,10 @@
           <span class="data-tag">Analytics</span>
           <span class="data-desc"><strong style="color:var(--parchment)">Usage events</strong> — anonymous usage data (screens opened, quests completed, onboarding steps) collected via PostHog, hosted in the EU. No personal identifiers are attached to analytics events unless you are signed in, in which case your Supabase user ID is used as an anonymous identifier.</span>
         </li>
+        <li>
+          <span class="data-tag">City request</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Email address and city name</strong> — collected only if you voluntarily submit a city request via the Explore tab ("Request Your City"). Used solely to notify you when Salmo launches in your city. This data is not linked to your account and is never used for marketing or shared with third parties.</span>
+        </li>
       </ul>
     </div>
 
@@ -347,7 +343,8 @@
          — To show you quests relevant to your location<br>
          — To track your personal progress (levels, completed quests, logs)<br>
          — To send you push notifications you have opted in to<br>
-         — To understand how the app is used so we can improve it (analytics)</p>
+         — To understand how the app is used so we can improve it (analytics)<br>
+         — To notify you when Salmo launches in a city you requested</p>
       <p>We do not use your data for advertising. We do not sell your data. We do not share your data with third parties except as described in Section 04.</p>
     </div>
 
@@ -385,6 +382,7 @@
       <p class="section-number">06 — Data retention</p>
       <h2 class="section-title">How long we keep your data.</h2>
       <p>We retain your data for as long as your account is active. If you delete your account via the app, all personal data associated with your account is permanently deleted from our servers within 30 days.</p>
+      <p>City request data (email + city) is retained until Salmo has launched in the requested city, or until you request deletion by contacting us.</p>
       <p>Analytics data collected via PostHog is retained for 12 months and is not linked to your identity after account deletion.</p>
       <p>Local data stored on your device is removed when you uninstall the app.</p>
     </div>
