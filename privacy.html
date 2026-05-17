@@ -294,7 +294,7 @@
     <div class="section">
       <p class="section-number">Introduction</p>
       <h2 class="section-title">We take your privacy seriously.</h2>
-      <p>Salmo ("we", "our", or "us") is a mobile application that helps you rediscover the world around you through daily quests. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
+      <p>Salmo ("we", "our", or "us") is a mobile application that helps you rediscover the world around you through daily quests, small swaps, and gentle reflection. This Privacy Policy explains what data we collect, why we collect it, and how we protect it.</p>
       <p>By using Salmo, you agree to the collection and use of information in accordance with this policy. If you do not agree, please do not use the app.</p>
     </div>
 
@@ -306,7 +306,7 @@
       <ul class="data-list">
         <li>
           <span class="data-tag">Auth</span>
-          <span class="data-desc"><strong style="color:var(--parchment)">Email address</strong> — collected when you sign in via email OTP. Used solely for authentication. We do not send marketing emails.</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Email address</strong> — collected when you sign in via email OTP or Sign in with Apple. Used solely for authentication. We do not send marketing emails.</span>
         </li>
         <li>
           <span class="data-tag">Profile</span>
@@ -318,7 +318,19 @@
         </li>
         <li>
           <span class="data-tag">Activity</span>
-          <span class="data-desc"><strong style="color:var(--parchment)">Completed quests and personal logs</strong> — when you complete a quest or write a personal log, this data is stored in our database linked to your account.</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Completed quests, daily swaps, and personal logs</strong> — when you complete a quest, complete a daily swap, or write a personal log, this data is stored in our database linked to your account.</span>
+        </li>
+        <li>
+          <span class="data-tag">Photos</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Optional photo uploads</strong> — when you attach a photo to a personal log, the image is uploaded to our secure storage. Before upload, the photo is automatically resized and all EXIF metadata (including GPS location, camera model, and timestamps) is stripped from the image. Photos are stored privately and accessible only via temporary signed URLs valid for one hour. Photos are never shared, never used for AI training, and never made public. You can delete any photo by removing the associated log entry.</span>
+        </li>
+        <li>
+          <span class="data-tag">Progression</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Salmo XP and growth data</strong> — we store your accumulated experience points, current life stage (Hatchling, Parr, Adult, Elder), daily XP earned, last app open date, and last passive XP tick. This data powers Salmo's growth and habitat unlock system, and applies daily limits that prevent abuse.</span>
+        </li>
+        <li>
+          <span class="data-tag">Habitat</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Unlocked items and inventory state</strong> — which habitat items you have unlocked and seen is stored locally on your device using standard iOS storage. This data does not leave your device.</span>
         </li>
         <li>
           <span class="data-tag">Push</span>
@@ -326,7 +338,7 @@
         </li>
         <li>
           <span class="data-tag">Analytics</span>
-          <span class="data-desc"><strong style="color:var(--parchment)">Usage events</strong> — anonymous usage data (screens opened, quests completed, onboarding steps) collected via PostHog, hosted in the EU. No personal identifiers are attached to analytics events unless you are signed in, in which case your Supabase user ID is used as an anonymous identifier.</span>
+          <span class="data-desc"><strong style="color:var(--parchment)">Usage events</strong> — anonymous usage data (screens opened, quests completed, swaps completed, onboarding steps) collected via PostHog, hosted in the EU. No personal identifiers are attached to analytics events unless you are signed in, in which case your Supabase user ID is used as an anonymous identifier.</span>
         </li>
         <li>
           <span class="data-tag">City request</span>
@@ -341,26 +353,29 @@
       <p>We use the data we collect for the following purposes only:</p>
       <p>— To authenticate you and maintain your account<br>
          — To show you quests relevant to your location<br>
-         — To track your personal progress (levels, completed quests, logs)<br>
+         — To track your personal progress (XP, growth stages, completed quests, swaps, logs)<br>
+         — To store and display photos you choose to attach to your logs<br>
+         — To unlock and display habitat items you have earned through your activity<br>
          — To send you push notifications you have opted in to<br>
          — To understand how the app is used so we can improve it (analytics)<br>
          — To notify you when Salmo launches in a city you requested</p>
-      <p>We do not use your data for advertising. We do not sell your data. We do not share your data with third parties except as described in Section 04.</p>
+      <p>We do not use your data for advertising. We do not sell your data. We do not use your photos or content to train any AI or machine learning models. We do not share your data with third parties except as described in Section 04.</p>
     </div>
 
     <div class="section">
       <p class="section-number">03 — Data storage</p>
       <h2 class="section-title">Where your data lives.</h2>
-      <p>Your account data is stored in <strong style="color:var(--parchment)">Supabase</strong>, a secure cloud database provider. Data is stored in the EU region. Supabase is SOC 2 compliant.</p>
-      <p>Analytics data is processed by <strong style="color:var(--parchment)">PostHog</strong>, hosted on EU infrastructure (eu.i.posthog.com). PostHog does not receive your email address or any directly identifiable personal information.</p>
-      <p>Some data (completed quests, personal logs) is also stored locally on your device via standard iOS storage mechanisms for offline access.</p>
+      <p>Your account data, logs, photos, and Salmo progression are stored in <strong style="color:var(--parchment)">Supabase</strong>, a secure cloud database and storage provider. Data is stored in the EU region. Supabase is SOC 2 compliant.</p>
+      <p>Photos are uploaded to a private Supabase Storage bucket. Access is restricted by row-level security rules: only you can access your own photos. Public access is not possible. Photos are served to the app through temporary signed URLs that expire after one hour.</p>
+      <p>Analytics data is processed by <strong style="color:var(--parchment)">PostHog</strong>, hosted on EU infrastructure (eu.i.posthog.com). PostHog does not receive your email address, your photos, or your log content.</p>
+      <p>Some data (your habitat inventory, locally cached photos, app preferences) is also stored locally on your device via standard iOS storage mechanisms for offline access.</p>
     </div>
 
     <div class="section">
       <p class="section-number">04 — Third parties</p>
       <h2 class="section-title">Who else touches your data.</h2>
       <p>We use the following third-party services, each of which has its own privacy policy:</p>
-      <p>— <strong style="color:var(--parchment)">Supabase</strong> (supabase.com) — database and authentication<br>
+      <p>— <strong style="color:var(--parchment)">Supabase</strong> (supabase.com) — database, authentication, and photo storage<br>
          — <strong style="color:var(--parchment)">PostHog</strong> (posthog.com) — product analytics, EU-hosted<br>
          — <strong style="color:var(--parchment)">Apple</strong> (apple.com) — Sign in with Apple authentication, push notification delivery</p>
       <p>We do not integrate any advertising networks, data brokers, or social media tracking.</p>
@@ -370,18 +385,19 @@
       <p class="section-number">05 — Your rights (GDPR)</p>
       <h2 class="section-title">You are in control of your data.</h2>
       <p>As a user based in the European Union or European Economic Area, you have the following rights under the General Data Protection Regulation (GDPR):</p>
-      <p>— <strong style="color:var(--parchment)">Right of access</strong> — you can request a copy of all data we hold about you<br>
+      <p>— <strong style="color:var(--parchment)">Right of access</strong> — you can request a copy of all data we hold about you, including your logs, photos, and progression data<br>
          — <strong style="color:var(--parchment)">Right to rectification</strong> — you can correct inaccurate data via the Settings screen<br>
-         — <strong style="color:var(--parchment)">Right to erasure</strong> — you can delete your account and all associated data directly in the app via Settings → Delete my account<br>
+         — <strong style="color:var(--parchment)">Right to erasure</strong> — you can delete your account and all associated data (including photos) directly in the app via Settings → Delete my account<br>
          — <strong style="color:var(--parchment)">Right to portability</strong> — you can request an export of your data by contacting us<br>
          — <strong style="color:var(--parchment)">Right to object</strong> — you can opt out of analytics at any time by contacting us</p>
-      <p>To exercise any of these rights, contact us at the address in Section 07.</p>
+      <p>To exercise any of these rights, contact us at the address in Section 08.</p>
     </div>
 
     <div class="section">
       <p class="section-number">06 — Data retention</p>
       <h2 class="section-title">How long we keep your data.</h2>
-      <p>We retain your data for as long as your account is active. If you delete your account via the app, all personal data associated with your account is permanently deleted from our servers within 30 days.</p>
+      <p>We retain your data for as long as your account is active. If you delete your account via the app, all personal data associated with your account — including your photos, logs, Salmo progression, and habitat state — is permanently deleted from our servers within 30 days.</p>
+      <p>Individual photos and logs can be deleted at any time from within the app without deleting your entire account.</p>
       <p>City request data (email + city) is retained until Salmo has launched in the requested city, or until you request deletion by contacting us.</p>
       <p>Analytics data collected via PostHog is retained for 12 months and is not linked to your identity after account deletion.</p>
       <p>Local data stored on your device is removed when you uninstall the app.</p>
